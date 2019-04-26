@@ -1,8 +1,11 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.ActionListener;
 
 
-public class Controller implements KeyListener {
+public class Controller implements KeyListener, ActionListener {
     private Model model;
 
     Controller(Viewer viewer){
@@ -11,6 +14,14 @@ public class Controller implements KeyListener {
 
     public Model getModel(){
         return model;
+    }
+
+    public void actionPerformed(ActionEvent event){
+        String command = event.getActionCommand();
+
+        if(command.equals("New")) {
+            Viewer viewer = new Viewer();
+        }
     }
 
     public void keyPressed(KeyEvent event){
