@@ -23,7 +23,6 @@ public class Canvas extends JPanel {
     private Image imageGround;
     private Image imageGroundFinish;
 
-
     Canvas(Model model){
         this.model = model;
         setBackground(Color.gray);
@@ -71,6 +70,9 @@ public class Canvas extends JPanel {
         int width = 64;
         int height = 64;
         int offset = 0 ;
+        int boxes = 0;
+        int freeGoalZone = 0;
+
 
         for (int i = 0; i < model.desktop.length; i++){
             for(int j = 0; j < model.desktop[i].length; j++){
@@ -90,19 +92,22 @@ public class Canvas extends JPanel {
                     pen.drawImage(imageWall, x, y, null);
                 }else if(model.desktop[i][j] == 3){
                     pen.drawImage(imageBox, x, y, null);
+                    boxes++;
                 }else if(model.desktop[i][j] == 0){
                     pen.drawImage(imageGround, x, y, null);
                 }else if(model.desktop[i][j] == 4){
                     pen.drawImage(imageGroundFinish, x, y, null);
+                    freeGoalZone++;
                 }else if (model.desktop[i][j] == 5){
+                    freeGoalZone++;
                     if (model.heroMove == 1){
                         pen.drawImage(imageHeroLeftGoal, x, y, null);
+                    }else if (model.heroMove == 4) {
+                        pen.drawImage(imageHeroDownGoal, x, y, null);
                     }else if (model.heroMove == 2){
                         pen.drawImage(imageHeroUpGoal, x, y, null);
                     }else if (model.heroMove == 3){
                         pen.drawImage(imageHeroRightGoal, x, y, null);
-                    }else if (model.heroMove == 4) {
-                        pen.drawImage(imageHeroDownGoal, x, y, null);
                     }
                 }else if(model.desktop[i][j] == 6){
                     pen.drawImage(imageBoxGoal, x, y, null);
@@ -115,6 +120,9 @@ public class Canvas extends JPanel {
             y = y + width + offset;
 
         }
+
+            model.checkForWin(freeGoalZone, boxes);
+
     }
 
 }
