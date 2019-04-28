@@ -12,7 +12,7 @@ public class Canvas extends JPanel {
     private Image imageHeroLeft;
     private Image imageHeroUp;
     private Image imageHeroRight;
-    private Image imageHeroDown;
+    public Image imageHeroDown;
     private Image imageHeroLeftGoal;
     private Image imageHeroUpGoal;
     private Image imageHeroRightGoal;
@@ -22,6 +22,7 @@ public class Canvas extends JPanel {
     private Image imageBoxGoal;
     private Image imageGround;
     private Image imageGroundFinish;
+    public Image imageWin;
 
     Canvas(Model model){
         this.model = model;
@@ -41,6 +42,8 @@ public class Canvas extends JPanel {
         File fileNameBox = new File("src/img/skin1/box.png");
         File fileNameGround = new File("src/img/skin1/ground.png");
         File fileNameGroundFinish = new File("src/img/skin1/ground_goal.png");
+        File fileNameWin = new File("src/img/skin1/win.png");
+
 
         try{
             imageHeroLeftGoal = ImageIO.read(fileNameHeroLeftGoal);
@@ -56,6 +59,7 @@ public class Canvas extends JPanel {
             imageBoxGoal = ImageIO.read(fileNameBoxGoal);
             imageGround = ImageIO.read(fileNameGround);
             imageGroundFinish = ImageIO.read(fileNameGroundFinish);
+            imageWin = ImageIO.read(fileNameWin);
         }catch (IOException e){
             System.out.println(e);
         }

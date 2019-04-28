@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Model {
     private Viewer viewer;
     int[][] desktop;
@@ -15,9 +17,6 @@ public class Model {
         3 - Box
         4 - GoalsZone
         6 - Box on GoalsZone
-
-
-
 */
         desktop = new int[][]{
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
@@ -419,7 +418,14 @@ public class Model {
 
         if (freeGoalZone == 0 && boxes == 0){
             System.out.println("YOU WIN!");
+            viewer.winFrame.setVisible(true);
+
         }
+    }
+
+    public void close(){
+        viewer.frame.dispose();
+        viewer.winFrame.dispose();
     }
 
     private void printDesktop(){

@@ -20,7 +20,14 @@ public class Controller implements KeyListener, ActionListener {
         String command = event.getActionCommand();
 
         if(command.equals("New")) {
+            model.close();
             Viewer viewer = new Viewer();
+
+        }
+        else if(command.equals("Exit")) {
+            System.exit(0);
+
+
         }
     }
 
