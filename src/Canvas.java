@@ -32,7 +32,7 @@ public class Canvas extends JPanel {
         File fileNameWall = new File("img/skin1/wall.png");
         File fileNameBox = new File("img/skin1/box.png");
         File fileNameGround = new File("img/skin1/ground.png");
-        File fileNameGroundFinish = new File("img/skin1/ground_finish.png");
+        File fileNameGroundFinish = new File("img/skin1/ground_goal.png");
 
         try{
             imageHeroLeft = ImageIO.read(fileNameHeroLeft);

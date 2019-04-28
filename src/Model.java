@@ -11,11 +11,11 @@ public class Model {
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
                 {2, 0, 1, 0, 2, 0, 0, 0, 0, 2},
                 {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 2, 2, 0, 0, 2, 0, 0, 2, 2},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 0, 0, 0, 0, 2, 0, 0, 0, 2},
-                {2, 0, 0, 0, 0, 0, 0, 4, 0, 2},
-                {2, 0, 0, 0, 0, 0, 0, 3, 0, 2},
+                {2, 0, 0, 0, 0, 2, 0, 0, 2, 2},
+                {2, 0, 3, 0, 0, 0, 0, 0, 0, 2},
+                {2, 0, 3, 0, 0, 2, 0, 0, 0, 2},
+                {2, 0, 3, 0, 0, 0, 0, 4, 0, 2},
+                {2, 0, 3, 0, 0, 0, 0, 3, 0, 2},
                 {2, 0, 2, 0, 3, 4, 0, 0, 0, 2},
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2}
         };
@@ -45,7 +45,14 @@ public class Model {
                 desktop[indexX][indexY - 1] = 0;
                 desktop[indexX][indexY - 2] = 3;
             }
+        }else if(desktop[indexX][indexY - 1] == 4){
+            if(desktop[indexX][indexY - 2] == 0) {
+                desktop[indexX][indexY - 1] = 0;
+                desktop[indexX][indexY - 2] = 4;
+            }
         }
+
+
         if(desktop[indexX][indexY - 1] == 0){
             desktop[indexX][indexY] = 0;
             indexY = indexY - 1;

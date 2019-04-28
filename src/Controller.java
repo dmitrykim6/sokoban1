@@ -26,7 +26,7 @@ public class Controller implements KeyListener, ActionListener {
 
     public void keyPressed(KeyEvent event){
         int keyCode = event.getKeyCode();
-        System.out.println(keyCode);
+//        System.out.println(keyCode);
         String direction = "";
 
         switch (keyCode){
