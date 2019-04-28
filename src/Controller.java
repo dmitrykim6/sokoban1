@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class Controller implements KeyListener, ActionListener {
     private Model model;
-
+    int level;
     Controller(Viewer viewer){
         model = new Model(viewer);
     }
@@ -21,16 +21,40 @@ public class Controller implements KeyListener, ActionListener {
         if(command.equals("New")) {
             model.close();
             Viewer viewer = new Viewer();
+        }
+//        else if(command.equals("Undo")) {
+//            model.Undo();
+//            model.Modelupdate();
+//        }
+        else if(command.equals("levelOne")) {
+            model.selectLevel(1);
+            model.Modelupdate();
+        }
+        else if(command.equals("levelTwo")) {
+            model.selectLevel(2);
+            model.Modelupdate();
+        }
+        else if(command.equals("levelThree")) {
+            model.selectLevel(3);
+            model.Modelupdate();
+        }
+        else if(command.equals("Next")) {
+            System.out.println(model.getLevel());
+            model.close(1);
+            model.selectLevel(model.getLevel() + 1);
+            model.Modelupdate();
+        }
+        else if(command.equals("levelFromFile")) {
+            model.Modelupdate();
+        }
+        else if(command.equals("levelFromDB")) {
+            model.Modelupdate();
+        }
 
-        }
-        else if(command.equals("Exit")) {
-            System.exit(0);
-        }
     }
 
     public void keyPressed(KeyEvent event){
         int keyCode = event.getKeyCode();
-//        System.out.println(keyCode);
         String direction = "";
 
         switch (keyCode){

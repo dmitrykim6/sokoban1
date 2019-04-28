@@ -12,7 +12,6 @@ public class Canvas extends JPanel {
     private Image imageHeroLeft;
     private Image imageHeroUp;
     private Image imageHeroRight;
-    public Image imageHeroDown;
     private Image imageHeroLeftGoal;
     private Image imageHeroUpGoal;
     private Image imageHeroRightGoal;
@@ -22,13 +21,13 @@ public class Canvas extends JPanel {
     private Image imageBoxGoal;
     private Image imageGround;
     private Image imageGroundFinish;
-    public Image imageWin;
+    Image imageWin;
+    Image imageHeroDown;
 
     Canvas(Model model){
         this.model = model;
         setBackground(Color.gray);
         setOpaque(true);
-
         File fileNameHeroLeftGoal = new File("src/img/skin1/hero_left_goal.png");
         File fileNameHeroUpGoal = new File("src/img/skin1/hero_up_goal.png");
         File fileNameHeroRightGoal = new File("src/img/skin1/hero_right_goal.png");
@@ -43,7 +42,6 @@ public class Canvas extends JPanel {
         File fileNameGround = new File("src/img/skin1/ground.png");
         File fileNameGroundFinish = new File("src/img/skin1/ground_goal.png");
         File fileNameWin = new File("src/img/skin1/win.png");
-
 
         try{
             imageHeroLeftGoal = ImageIO.read(fileNameHeroLeftGoal);
@@ -61,9 +59,8 @@ public class Canvas extends JPanel {
             imageGroundFinish = ImageIO.read(fileNameGroundFinish);
             imageWin = ImageIO.read(fileNameWin);
         }catch (IOException e){
-            System.out.println(e);
+            System.out.println("Error: " + e);
         }
-
     }
 
     public void paint(Graphics pen){
@@ -77,11 +74,9 @@ public class Canvas extends JPanel {
         int boxes = 0;
         int freeGoalZone = 0;
 
-
         for (int i = 0; i < model.desktop.length; i++){
             for(int j = 0; j < model.desktop[i].length; j++){
                 if (model.desktop[i][j] == 1){
-
                     if (model.heroMove == 1){
                         pen.drawImage(imageHeroLeft, x, y, null);
                     }else if (model.heroMove == 2){
@@ -91,7 +86,6 @@ public class Canvas extends JPanel {
                     }else if (model.heroMove == 4) {
                         pen.drawImage(imageHeroDown, x, y, null);
                     }
-
                 }else if(model.desktop[i][j] == 2){
                     pen.drawImage(imageWall, x, y, null);
                 }else if(model.desktop[i][j] == 3){
@@ -116,17 +110,12 @@ public class Canvas extends JPanel {
                 }else if(model.desktop[i][j] == 6){
                     pen.drawImage(imageBoxGoal, x, y, null);
                 }
-
                 x = x + height + offset;
             }
-
             x = start;
             y = y + width + offset;
-
         }
-
             model.checkForWin(freeGoalZone, boxes);
-
     }
 
 }
