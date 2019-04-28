@@ -13,8 +13,13 @@ public class Canvas extends JPanel {
     private Image imageHeroUp;
     private Image imageHeroRight;
     private Image imageHeroDown;
+    private Image imageHeroLeftGoal;
+    private Image imageHeroUpGoal;
+    private Image imageHeroRightGoal;
+    private Image imageHeroDownGoal;
     private Image imageWall;
     private Image imageBox;
+    private Image imageBoxGoal;
     private Image imageGround;
     private Image imageGroundFinish;
 
@@ -24,22 +29,32 @@ public class Canvas extends JPanel {
         setBackground(Color.gray);
         setOpaque(true);
 
-        File fileNameHeroLeft = new File("img/skin1/hero_left.png");
-        File fileNameHeroUp = new File("img/skin1/hero_up.png");
-        File fileNameHeroRight = new File("img/skin1/hero_right.png");
-        File fileNameHeroDown = new File("img/skin1/hero_down.png");
-        File fileNameWall = new File("img/skin1/wall.png");
-        File fileNameBox = new File("img/skin1/box.png");
-        File fileNameGround = new File("img/skin1/ground.png");
-        File fileNameGroundFinish = new File("img/skin1/ground_goal.png");
+        File fileNameHeroLeftGoal = new File("src/img/skin1/hero_left_goal.png");
+        File fileNameHeroUpGoal = new File("src/img/skin1/hero_up_goal.png");
+        File fileNameHeroRightGoal = new File("src/img/skin1/hero_right_goal.png");
+        File fileNameHeroDownGoal = new File("src/img/skin1/hero_down_goal.png");
+        File fileNameHeroLeft = new File("src/img/skin1/hero_left.png");
+        File fileNameHeroUp = new File("src/img/skin1/hero_up.png");
+        File fileNameHeroRight = new File("src/img/skin1/hero_right.png");
+        File fileNameHeroDown = new File("src/img/skin1/hero_down.png");
+        File fileNameWall = new File("src/img/skin1/wall.png");
+        File fileNameBoxGoal = new File("src/img/skin1/box_goal.png");
+        File fileNameBox = new File("src/img/skin1/box.png");
+        File fileNameGround = new File("src/img/skin1/ground.png");
+        File fileNameGroundFinish = new File("src/img/skin1/ground_goal.png");
 
         try{
+            imageHeroLeftGoal = ImageIO.read(fileNameHeroLeftGoal);
+            imageHeroUpGoal = ImageIO.read(fileNameHeroUpGoal);
+            imageHeroRightGoal = ImageIO.read(fileNameHeroRightGoal);
+            imageHeroDownGoal = ImageIO.read(fileNameHeroDownGoal);
             imageHeroLeft = ImageIO.read(fileNameHeroLeft);
             imageHeroUp = ImageIO.read(fileNameHeroUp);
             imageHeroRight = ImageIO.read(fileNameHeroRight);
             imageHeroDown = ImageIO.read(fileNameHeroDown);
             imageWall = ImageIO.read(fileNameWall);
             imageBox = ImageIO.read(fileNameBox);
+            imageBoxGoal = ImageIO.read(fileNameBoxGoal);
             imageGround = ImageIO.read(fileNameGround);
             imageGroundFinish = ImageIO.read(fileNameGroundFinish);
         }catch (IOException e){
@@ -79,6 +94,18 @@ public class Canvas extends JPanel {
                     pen.drawImage(imageGround, x, y, null);
                 }else if(model.desktop[i][j] == 4){
                     pen.drawImage(imageGroundFinish, x, y, null);
+                }else if (model.desktop[i][j] == 5){
+                    if (model.heroMove == 1){
+                        pen.drawImage(imageHeroLeftGoal, x, y, null);
+                    }else if (model.heroMove == 2){
+                        pen.drawImage(imageHeroUpGoal, x, y, null);
+                    }else if (model.heroMove == 3){
+                        pen.drawImage(imageHeroRightGoal, x, y, null);
+                    }else if (model.heroMove == 4) {
+                        pen.drawImage(imageHeroDownGoal, x, y, null);
+                    }
+                }else if(model.desktop[i][j] == 6){
+                    pen.drawImage(imageBoxGoal, x, y, null);
                 }
 
                 x = x + height + offset;
@@ -89,4 +116,5 @@ public class Canvas extends JPanel {
 
         }
     }
+
 }
