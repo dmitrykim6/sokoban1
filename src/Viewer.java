@@ -4,14 +4,10 @@ import java.awt.event.KeyEvent;
 
 public class Viewer {
     Canvas canvas;
-//    Canvas secondCanvas;
-
     Viewer(){
         Controller controller = new Controller(this);
         Model model = controller.getModel();
         canvas = new Canvas(model);
-
-//        secondCanvas = new Canvas(model);
 
         JFrame frame = new JFrame("Sokoban");
         frame.setSize(900, 720);

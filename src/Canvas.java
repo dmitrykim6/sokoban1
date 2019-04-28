@@ -9,7 +9,6 @@ import javax.swing.*;
 public class Canvas extends JPanel {
 
     private Model model;
-    private Image imageHero;
     private Image imageHeroLeft;
     private Image imageHeroUp;
     private Image imageHeroRight;
@@ -24,7 +23,7 @@ public class Canvas extends JPanel {
         this.model = model;
         setBackground(Color.gray);
         setOpaque(true);
-        File fileNameGamer = new File("img/skin1/hero.png");
+
         File fileNameHeroLeft = new File("img/skin1/hero_left.png");
         File fileNameHeroUp = new File("img/skin1/hero_up.png");
         File fileNameHeroRight = new File("img/skin1/hero_right.png");
@@ -39,7 +38,6 @@ public class Canvas extends JPanel {
             imageHeroUp = ImageIO.read(fileNameHeroUp);
             imageHeroRight = ImageIO.read(fileNameHeroRight);
             imageHeroDown = ImageIO.read(fileNameHeroDown);
-            imageHero = ImageIO.read(fileNameGamer);
             imageWall = ImageIO.read(fileNameWall);
             imageBox = ImageIO.read(fileNameBox);
             imageGround = ImageIO.read(fileNameGround);
