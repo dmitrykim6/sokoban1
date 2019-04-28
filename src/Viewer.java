@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
@@ -57,15 +56,21 @@ public class Viewer {
 
         JButton winOkButton = new JButton("New game");
         winOkButton.setSize(60, 40);
-        winOkButton.setBounds(70, 50, 150, 50);
+        winOkButton.setBounds(20, 50, 110, 50);
         winOkButton.addActionListener(controller);
         winOkButton.setActionCommand("New");
 
+        JButton exitButton = new JButton("Quit");
+        exitButton.setSize(60, 40);
+        exitButton.setBounds(160, 50, 110, 50);
+        exitButton.addActionListener(controller);
+        exitButton.setActionCommand("Exit");
+
         winFrame.add(winMsg);
         winFrame.add(winOkButton);
+        winFrame.add(exitButton);
         winFrame.setVisible(false);
         winFrame.setResizable(false);
-
         winFrame.setIconImage(canvas.imageWin);
 
 

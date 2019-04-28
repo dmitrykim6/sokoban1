@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 public class Model {
     private Viewer viewer;
     int[][] desktop;
@@ -11,25 +9,9 @@ public class Model {
     Model(Viewer viewer) {
         this.viewer = viewer;
 
-/*      0 - Empty
-        1 - Hero
-        2 - Wall
-        3 - Box
-        4 - GoalsZone
-        6 - Box on GoalsZone
-*/
-        desktop = new int[][]{
-                {2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 0, 0, 0, 0, 3, 4, 0, 0, 2},
-                {2, 0, 0, 0, 0, 3, 4, 0, 0, 2},
-                {2, 0, 0, 0, 1, 3, 4, 0, 0, 2},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                {2, 2, 2, 2, 2, 2, 2, 2, 2, 2}
-        };
+        ImportMap importMap = new ImportMap();
+//        desktop = importMap.openFile();
+        desktop = importMap.desktop;
         indexX = 5;
         indexY = 4;
 
@@ -37,15 +19,6 @@ public class Model {
     }
 
     public void move(String direction) {
-
-//        switch (direction){
-//            case "left": moveLeft();
-//            case "up": moveUp();
-//            case "right": moveRight();
-//            case "down": moveDown();
-//
-//        }
-
 
         if (direction.equals("left")) {
             moveLeft();
