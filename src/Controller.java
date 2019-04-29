@@ -26,6 +26,9 @@ public class Controller implements KeyListener, ActionListener {
 //            model.Undo();
 //            model.Modelupdate();
 //        }
+        else if(command.equals("Exit")) {
+            model.close();
+        }
         else if(command.equals("levelOne")) {
             model.selectLevel(1);
             model.Modelupdate();
