@@ -108,11 +108,9 @@ public class Viewer {
         menuLevel.add(fromFile);
         menuLevel.add(fromDB);
 
-
         frame.setJMenuBar(jMenuBar);
         frame.setVisible(false);
         frame.addKeyListener(controller);
-
 
         winFrame = new JFrame("You Win!");
         winFrame.setSize(300, 150);
@@ -141,16 +139,6 @@ public class Viewer {
         winFrame.setVisible(false);
         winFrame.setResizable(false);
         winFrame.setIconImage(canvas.imageWin);
-    }
-
-    public String chooseSkin(int num){
-        String skinNo;
-        if(num == 1){
-            skinNo = "src/img/skin1/";
-        }else {
-            skinNo = "src/img/skin2/";
-        }
-        return skinNo;
     }
 
     public void update(){

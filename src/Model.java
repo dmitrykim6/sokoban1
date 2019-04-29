@@ -423,8 +423,9 @@ public class Model {
     }
 
     void close(){
-        viewer.frame.dispose();
+        viewer.selSkins.dispose();
         viewer.winFrame.dispose();
+        viewer.frame.dispose();
     }
 
     void close(int warning){
