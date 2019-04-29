@@ -9,15 +9,18 @@ public class Model {
     int prevPosition;
 
     ImportMap importMap = new ImportMap();
+    Hero hero;
 
     Model(Viewer viewer) {
         this.viewer = viewer;
+        hero = new Hero();
         selectLevel(level);
 
     }
 
     void selectLevel(int level){
         desktop = importMap.selLevel(level);
+
 //      Hero start position
         indexX = 5;
         indexY = 4;
@@ -30,7 +33,7 @@ public class Model {
     void move(String direction) {
 
         if (direction.equals("left")) {
-            moveLeft();
+            hero.moveLeft();
         } else if (direction.equals("up")) {
             moveUp();
         } else if (direction.equals("right")) {
@@ -46,7 +49,7 @@ public class Model {
     }
 
     private void moveLeft() {
-
+//stay on ground
         if(desktop[indexX][indexY] == 1){
             if (desktop[indexX][indexY-1] == 0){
                 copyMap();
@@ -94,6 +97,7 @@ public class Model {
                 }
             }
         }
+// stay on Goal Zone
         else if(desktop[indexX][indexY] == 5){
             if (desktop[indexX][indexY-1] == 0){
                 copyMap();
