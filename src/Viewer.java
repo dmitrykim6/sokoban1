@@ -9,10 +9,36 @@ public class Viewer {
     Controller controller;
     JLabel winMsg;
     JFrame winFrame;
+    JFrame selSkins;
 
     Viewer(){
+
         controller = new Controller(this);
         Model model = controller.getModel();
+
+        selSkins = new JFrame("Select Skin");
+        selSkins.setSize(300, 150);
+        selSkins.setLocationRelativeTo(null);
+        selSkins.setLayout(null);
+        selSkins.setResizable(false);
+        selSkins.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        JButton skinOneButton = new JButton("Skin One");
+        skinOneButton.setSize(60, 40);
+        skinOneButton.setBounds(20, 50, 110, 50);
+        skinOneButton.addActionListener(controller);
+        skinOneButton.setActionCommand("SkinOne");
+
+        JButton skinTwoButton = new JButton("Skin Two");
+        skinTwoButton.setSize(60, 40);
+        skinTwoButton.setBounds(160, 50, 110, 50);
+        skinTwoButton.addActionListener(controller);
+        skinTwoButton.setActionCommand("SkinTwo");
+
+        selSkins.add(skinOneButton);
+        selSkins.add(skinTwoButton);
+        selSkins.setVisible(true);
+
         canvas = new Canvas(model);
 
         frame = new JFrame("Sokoban");
@@ -70,6 +96,8 @@ public class Viewer {
 
         jMenuBar.add(menuFile);
         jMenuBar.add(menuLevel);
+
+
         menuFile.add(createMenuItemNew);
         menuFile.add(createMenuItemUndo);
         menuFile.add(createMenuItemExit);
@@ -80,8 +108,9 @@ public class Viewer {
         menuLevel.add(fromFile);
         menuLevel.add(fromDB);
 
+
         frame.setJMenuBar(jMenuBar);
-        frame.setVisible(true);
+        frame.setVisible(false);
         frame.addKeyListener(controller);
 
 
@@ -114,8 +143,17 @@ public class Viewer {
         winFrame.setIconImage(canvas.imageWin);
     }
 
+    public String chooseSkin(int num){
+        String skinNo;
+        if(num == 1){
+            skinNo = "src/img/skin1/";
+        }else {
+            skinNo = "src/img/skin2/";
+        }
+        return skinNo;
+    }
+
     public void update(){
         canvas.repaint();
     }
-
 }

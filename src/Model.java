@@ -7,33 +7,35 @@ public class Model {
     int[][] desktop;
     int[][] copyDesktop;
     int prevPosition;
+    int levelLoaded = 1;
+    private int heroStartPositionX;
+    private int heroStartPositionY;
 
     ImportMap importMap = new ImportMap();
-    Hero hero;
 
     Model(Viewer viewer) {
         this.viewer = viewer;
-        hero = new Hero();
         selectLevel(level);
-
     }
 
     void selectLevel(int level){
         desktop = importMap.selLevel(level);
+        levelLoaded = level;
 
 //      Hero start position
-        indexX = 5;
-        indexY = 4;
+        wereMyHero();
+
+        indexX = heroStartPositionX;
+        indexY = heroStartPositionY;
     }
 
     int getLevel(){
-        return level;
+        return levelLoaded;
     }
 
     void move(String direction) {
-
         if (direction.equals("left")) {
-            hero.moveLeft();
+            moveLeft();
         } else if (direction.equals("up")) {
             moveUp();
         } else if (direction.equals("right")) {
@@ -143,7 +145,6 @@ public class Model {
                     desktop[indexX][indexY-1] = 6;
                 }
             }
-
         }
 
         heroMove = 1;
@@ -230,7 +231,6 @@ public class Model {
                     desktop[indexX-1][indexY] = 6;
                 }
             }
-
         }
 
         heroMove = 2;
@@ -320,7 +320,6 @@ public class Model {
         heroMove = 3;
     }
 
-
     private void moveDown() {
         if(desktop[indexX][indexY] == 1){
             if (desktop[indexX+1][indexY] == 0){
@@ -409,7 +408,6 @@ public class Model {
         System.out.println("Goals cell: "+  freeGoalZone);
         System.out.println("Boxes: " + boxes);
 
-
         if (freeGoalZone != boxes){
             System.out.println("Check counts of boxes or Goals Zones!");
         }
@@ -428,8 +426,20 @@ public class Model {
         viewer.frame.dispose();
         viewer.winFrame.dispose();
     }
+
     void close(int warning){
         viewer.winFrame.dispose();
+    }
+
+    private void wereMyHero(){
+        for (int i = 0; i < desktop.length; i++) {
+            for (int j = 0; j < desktop[i].length; j++) {
+                if(desktop[i][j] == 1){
+                    heroStartPositionX = i;
+                    heroStartPositionY = j;
+                };
+            }
+        }
     }
 
     private void copyMap(){
@@ -449,6 +459,18 @@ public class Model {
         }
         System.out.println("UNDO");
         Modelupdate();
+    }
+
+    void setSkin(int noSkin){
+        viewer.selSkins.setVisible(false);
+
+        if(noSkin == 1){
+            viewer.canvas.setSkin = 1;
+        }
+        else{
+            viewer.canvas.setSkin = 2;
+        }
+        viewer.frame.setVisible(true);
     }
 
 }

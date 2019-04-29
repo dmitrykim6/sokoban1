@@ -41,19 +41,27 @@ public class Controller implements KeyListener, ActionListener {
             model.selectLevel(3);
             model.Modelupdate();
         }
-        else if(command.equals("Next")) {
-            System.out.println(model.getLevel());
-            model.close(1);
-            model.selectLevel(model.getLevel() + 1);
-            model.Modelupdate();
-        }
         else if(command.equals("levelFromFile")) {
             model.Modelupdate();
         }
         else if(command.equals("levelFromDB")) {
             model.Modelupdate();
         }
+        else if(command.equals("Next")) {
+            model.close(1);
+            if(model.getLevel() < 3){
+                model.selectLevel(model.getLevel() + 1);
+            }else model.selectLevel(model.getLevel());
 
+            model.Modelupdate();
+        }
+        else if(command.equals("SkinOne")) {
+            model.setSkin(1);
+
+        }
+        else if(command.equals("SkinTwo")) {
+            model.setSkin(2);
+        }
     }
 
     public void keyPressed(KeyEvent event){
