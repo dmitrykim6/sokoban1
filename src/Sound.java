@@ -10,10 +10,11 @@ class Sound{
     void playSound(String filename, int loop){
         isPlay = 1;
 
+        File file = new File(filename);
       try
         {
             clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(new File(filename)));
+            clip.open(AudioSystem.getAudioInputStream(file));
             clip.start();
             if (loop == 1) {
                 clip.loop(1000);

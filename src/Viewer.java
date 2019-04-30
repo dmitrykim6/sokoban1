@@ -17,7 +17,7 @@ public class Viewer {
 
         // Frame select music and skins
         selSkins = new JFrame("Select Skin");
-        selSkins.setSize(300, 150);
+        selSkins.setSize(320, 150);
         selSkins.setLocationRelativeTo(null);
         selSkins.setLayout(null);
         selSkins.setResizable(false);
@@ -27,17 +27,17 @@ public class Viewer {
         ButtonGroup soundControl = new ButtonGroup();
 
         JRadioButton soundOff = new JRadioButton("Sound off", true);
-        soundOff.setBounds(20, 0, 80, 50);
+        soundOff.setBounds(20, 0, 100, 50);
         soundOff.addActionListener(controller);
         soundOff.setActionCommand("Mute");
 
         JRadioButton soundOnClip1 = new JRadioButton("Mario", false);
-        soundOnClip1.setBounds(120, 0, 80, 50);
+        soundOnClip1.setBounds(140, 0, 100, 50);
         soundOnClip1.addActionListener(controller);
         soundOnClip1.setActionCommand("PlayClipOne");
 
         JRadioButton soundOnClip2 = new JRadioButton("Funy", false);
-        soundOnClip2.setBounds(200, 0, 80, 50);
+        soundOnClip2.setBounds(240, 0, 100, 50);
         soundOnClip2.addActionListener(controller);
         soundOnClip2.setActionCommand("PlayClipTwo");
 
@@ -47,13 +47,13 @@ public class Viewer {
 
         // Buttons - Select skin
         JButton skinOneButton = new JButton("Skin One");
-        skinOneButton.setSize(60, 40);
+        skinOneButton.setSize(80, 40);
         skinOneButton.setBounds(20, 50, 110, 50);
         skinOneButton.addActionListener(controller);
         skinOneButton.setActionCommand("SkinOne");
 
         JButton skinTwoButton = new JButton("Skin Two");
-        skinTwoButton.setSize(60, 40);
+        skinTwoButton.setSize(80, 40);
         skinTwoButton.setBounds(160, 50, 110, 50);
         skinTwoButton.addActionListener(controller);
         skinTwoButton.setActionCommand("SkinTwo");

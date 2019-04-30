@@ -11,6 +11,7 @@ public class Model {
     int levelLoaded = 1;
     private int heroStartPositionX;
     private int heroStartPositionY;
+    boolean isMute = true;
 
     ImportMap importMap = new ImportMap();
 
@@ -65,12 +66,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY-1] == 3){
                 if(desktop[indexX][indexY-2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX][indexY-1] = 3;
                 }
                 else if(desktop[indexX][indexY-2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 1;
@@ -79,12 +82,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY-1] == 6){
                 if(desktop[indexX][indexY-2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX][indexY-1] = 3;
                 }
                 else if(desktop[indexX][indexY-2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 5;
@@ -106,12 +111,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY-1] == 3){
                 if(desktop[indexX][indexY-2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX][indexY-1] = 3;
                 }
                 else if(desktop[indexX][indexY-2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 5;
@@ -120,12 +127,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY-1] == 6){
                 if(desktop[indexX][indexY-2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX][indexY-1] = 3;
                 }
                 else if(desktop[indexX][indexY-2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY-1;
                     desktop[indexX][indexY] = 5;
@@ -152,12 +161,14 @@ public class Model {
             }
             else if (desktop[indexX-1][indexY] == 3){
                 if(desktop[indexX-2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX-1][indexY] = 3;
                 }
                 else if(desktop[indexX-2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 1;
@@ -166,12 +177,14 @@ public class Model {
             }
             else if (desktop[indexX-1][indexY] == 6){
                 if(desktop[indexX-2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX-1][indexY] = 3;
                 }
                 else if(desktop[indexX-2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 5;
@@ -192,12 +205,14 @@ public class Model {
             }
             else if (desktop[indexX-1][indexY] == 3){
                 if(desktop[indexX-2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX-1][indexY] = 3;
                 }
                 else if(desktop[indexX-2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 5;
@@ -206,12 +221,14 @@ public class Model {
             }
             else if (desktop[indexX-1][indexY] == 6){
                 if(desktop[indexX-2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX-1][indexY] = 3;
                 }
                 else if(desktop[indexX-2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX-1;
                     desktop[indexX][indexY] = 5;
@@ -237,12 +254,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY+1] == 3){
                 if(desktop[indexX][indexY+2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX][indexY+1] = 3;
                 }
                 else if(desktop[indexX][indexY+2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 1;
@@ -251,12 +270,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY+1] == 6){
                 if(desktop[indexX][indexY+2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX][indexY+1] = 3;
                 }
                 else if(desktop[indexX][indexY+2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 5;
@@ -266,23 +287,27 @@ public class Model {
         }
         else if(desktop[indexX][indexY] == 5){
             if (desktop[indexX][indexY+1] == 0){
+                playMusic(5);
                 desktop[indexX][indexY] = 4;
                 indexY = indexY+1;
                 desktop[indexX][indexY] = 1;
             }
             else if (desktop[indexX][indexY+1] == 4){
+                playMusic(4);
                 desktop[indexX][indexY] = 4;
                 indexY = indexY+1;
                 desktop[indexX][indexY] = 5;
             }
             else if (desktop[indexX][indexY+1] == 3){
                 if(desktop[indexX][indexY+2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX][indexY+1] = 3;
                 }
                 else if(desktop[indexX][indexY+2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 5;
@@ -291,12 +316,14 @@ public class Model {
             }
             else if (desktop[indexX][indexY+1] == 6){
                 if(desktop[indexX][indexY+2] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX][indexY+1] = 3;
                 }
                 else if(desktop[indexX][indexY+2] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexY = indexY+1;
                     desktop[indexX][indexY] = 5;
@@ -321,12 +348,14 @@ public class Model {
             }
             else if (desktop[indexX+1][indexY] == 3){
                 if(desktop[indexX+2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX+1][indexY] = 3;
                 }
                 else if(desktop[indexX+2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 1;
@@ -335,12 +364,14 @@ public class Model {
             }
             else if (desktop[indexX+1][indexY] == 6){
                 if(desktop[indexX+2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX+1][indexY] = 3;
                 }
                 else if(desktop[indexX+2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 0;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 5;
@@ -361,12 +392,14 @@ public class Model {
             }
             else if (desktop[indexX+1][indexY] == 3){
                 if(desktop[indexX+2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 1;
                     desktop[indexX+1][indexY] = 3;
                 }
                 else if(desktop[indexX+2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 5;
@@ -375,12 +408,14 @@ public class Model {
             }
             else if (desktop[indexX+1][indexY] == 6){
                 if(desktop[indexX+2][indexY] == 0) {
+                    playMusic(5);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 5;
                     desktop[indexX+1][indexY] = 3;
                 }
                 else if(desktop[indexX+2][indexY] == 4) {
+                    playMusic(4);
                     desktop[indexX][indexY] = 4;
                     indexX = indexX+1;
                     desktop[indexX][indexY] = 5;
@@ -450,6 +485,7 @@ public class Model {
 
     // select music
     void playMusic(int selectedClip){
+
         if (selectedClip == 0) {
             sound.stopPlay();
         }
@@ -462,8 +498,21 @@ public class Model {
             sound.playSound("src/sound/clip_kalambur.wav", 1);
         }
         else if (selectedClip == 3){
-            sound.playSound("src/sound/clip_wow.wav", 0);
+            if(!isMute) {
+                sound.playSound("src/sound/clip_wow.wav", 0);
+            }
         }
+        else if (selectedClip == 4){
+            if(!isMute) {
+                sound.playSound("src/sound/clip_coin.wav", 0);
+            }
+        }
+        else if (selectedClip == 5){
+            if(!isMute) {
+                sound.playSound("src/sound/clip_kick.wav", 0);
+            }
+        }
+
     }
 
 }

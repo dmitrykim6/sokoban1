@@ -66,12 +66,15 @@ public class Controller implements KeyListener, ActionListener {
 
         // sound system control
         else if(command.equals("Mute")) {
+            model.isMute = true;
             model.playMusic(0);
         }
         else if(command.equals("PlayClipOne")) {
+            model.isMute = false;
             model.playMusic(1);
         }
         else if(command.equals("PlayClipTwo")) {
+            model.isMute = false;
             model.playMusic(2);
         }
     }
