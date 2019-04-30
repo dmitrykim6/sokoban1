@@ -54,7 +54,7 @@ public class Viewer {
 
         JButton skinTwoButton = new JButton("Skin Two");
         skinTwoButton.setSize(80, 40);
-        skinTwoButton.setBounds(160, 50, 110, 50);
+        skinTwoButton.setBounds(180, 50, 110, 50);
         skinTwoButton.addActionListener(controller);
         skinTwoButton.setActionCommand("SkinTwo");
 

@@ -484,32 +484,37 @@ public class Model {
     }
 
     // select music
-    void playMusic(int selectedClip){
+    void playBackgroundMusic(int selectedClip){
 
         if (selectedClip == 0) {
             sound.stopPlay();
         }
         else if (selectedClip == 1) {
             sound.stopPlay();
-            sound.playSound("src/sound/clip_mario.wav", 1);
+            sound.playBackgroundSound("src/sound/clip_mario.wav", 1);
         }
         else if (selectedClip == 2) {
             sound.stopPlay();
-            sound.playSound("src/sound/clip_kalambur.wav", 1);
+            sound.playBackgroundSound("src/sound/clip_kalambur.wav", 1);
         }
-        else if (selectedClip == 3){
+
+    }
+
+    void playMusic(int selectedClip){
+
+        if (selectedClip == 3){
             if(!isMute) {
-                sound.playSound("src/sound/clip_wow.wav", 0);
+                sound.playSound("src/sound/clip_wow.wav");
             }
         }
         else if (selectedClip == 4){
             if(!isMute) {
-                sound.playSound("src/sound/clip_coin.wav", 0);
+                sound.playSound("src/sound/clip_coin.wav");
             }
         }
         else if (selectedClip == 5){
             if(!isMute) {
-                sound.playSound("src/sound/clip_kick.wav", 0);
+                sound.playSound("src/sound/clip_kick.wav");
             }
         }
 
