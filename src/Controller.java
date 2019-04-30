@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class Controller implements KeyListener, ActionListener {
     private Model model;
+    private Sound soundSystem;
     int level;
     Controller(Viewer viewer){
         model = new Model(viewer);
@@ -61,6 +62,17 @@ public class Controller implements KeyListener, ActionListener {
         }
         else if(command.equals("SkinTwo")) {
             model.setSkin(2);
+        }
+
+        // sound system control
+        else if(command.equals("Mute")) {
+            model.playMusic(0);
+        }
+        else if(command.equals("PlayClipOne")) {
+            model.playMusic(1);
+        }
+        else if(command.equals("PlayClipTwo")) {
+            model.playMusic(2);
         }
     }
 
