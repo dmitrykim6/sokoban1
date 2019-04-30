@@ -461,12 +461,13 @@ public class Model {
 
     // define were is my hero
     private void wereMyHero(){
-        for (int i = 0; i < desktop.length; i++) {
+        stopLabel: for (int i = 0; i < desktop.length; i++) {
             for (int j = 0; j < desktop[i].length; j++) {
                 if(desktop[i][j] == 1){
                     heroStartPositionX = i;
                     heroStartPositionY = j;
-                };
+                    break stopLabel;
+                }
             }
         }
     }
