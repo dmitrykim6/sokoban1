@@ -1,6 +1,13 @@
+import java.io.*;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 class ImportMap {
     int[][] desktop;
+    JFileChooser fileChooser = new JFileChooser();
+    File file;
+
+
     ImportMap(){
 /*      0 - Empty
         1 - Hero
@@ -51,54 +58,65 @@ class ImportMap {
                     {2, 2, 0, 0, 0, 0, 0, 0, 2, 2},
                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2}
             };
+        }else if (level == 4) {
+
+            desktop = openFile();
         }
         return desktop;
     }
-}
 
-
-
-
-/*
-//import java.io.*;
-//import java.util.Scanner;
-//import javax.swing.*;
-//import javax.swing.filechooser.FileNameExtensionFilter;
-
-
-//    JFileChooser fileChooser = new JFileChooser();
-//    File file;
-        openFile();
     public int[][] openFile(){
 
-        int text = 0;
+        String text = "";
+        String[]desktopStringY;
+        String[]desktopStringX;
+        String  cell;
+
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "Text files only", "txt");
+                "Sokoban files only", "sok");
         fileChooser.setFileFilter(filter);
         int ret = fileChooser.showDialog(null, "Открыть файл");
         if (ret == JFileChooser.APPROVE_OPTION) {
-            file = fileChooser.getSelectedFile();
-            FileInputStream inF;
-            try{
 
-                inF = new FileInputStream(file);
-                BufferedReader in = new BufferedReader(new InputStreamReader(inF, "UTF8"));
+            file = fileChooser.getSelectedFile();
+            FileReader inF;
+
+            try{
                 int words;
-//                while ((words = in.read()) != -1){
-//                    text = text + (char)words;
-//                }
-                for(int i = 0; i < 10; i++){
-                    for(int j = 0; j < 10; j++){
-                        desktop[i][j] = in.read();
-                    }
+                inF = new FileReader(file);
+
+                while ((words = inF.read()) != -1){
+                    text = text + (char)words;
                 }
 
+                desktopStringY = text.split("\n");
+
+
+
+                for (int i = 0; i < desktopStringY.length; i++){
+                    desktopStringX = text.split(",");
+                }
+
+                for (int i = 0; i < desktopStringY.length; i++){
+                    for (int j = 0;j < desktopStringY[i].length(); j ++){
+                        cell = desktopStringY[i].charAt(j) + "";
+                        desktop[i][j] = Integer.parseInt(cell);
+                        System.out.print(desktop[i][j]);
+                    }
+                    System.out.println();
+                }
+
+                System.out.println();
+//                desktop = desktopString;
             }catch(IOException e){
                 System.out.println("Error");
             }
         }
         return desktop;
     }
-*/
+
+}
+
+
 

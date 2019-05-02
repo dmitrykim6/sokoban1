@@ -43,6 +43,7 @@ public class Controller implements KeyListener, ActionListener {
             model.Modelupdate();
         }
         else if(command.equals("levelFromFile")) {
+            model.selectLevel(4);
             model.Modelupdate();
         }
         else if(command.equals("levelFromDB")) {
