@@ -69,7 +69,7 @@ class ImportMap {
 
         String text = "";
         String[]desktopStringY;
-        String[]desktopStringX;
+//        String[]desktopStringX;
         String  cell;
 
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -95,7 +95,7 @@ class ImportMap {
 
 
                 for (int i = 0; i < desktopStringY.length; i++){
-                    desktopStringX = text.split(",");
+//                    desktopStringX = text.split(",");
                 }
 
                 for (int i = 0; i < desktopStringY.length; i++){
