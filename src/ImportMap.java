@@ -69,8 +69,7 @@ class ImportMap {
 
         String text = "";
         String[]desktopStringY;
-//        String[]desktopStringX;
-        String  cell;
+        String[]desktopStringX;
 
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -90,25 +89,23 @@ class ImportMap {
                     text = text + (char)words;
                 }
 
-                desktopStringY = text.split("\n");
+                desktopStringX = text.split("\n");
 
+                for (int i = 0; i < desktopStringX.length; i++){
 
-
-                for (int i = 0; i < desktopStringY.length; i++){
-//                    desktopStringX = text.split(",");
                 }
 
-                for (int i = 0; i < desktopStringY.length; i++){
-                    for (int j = 0;j < desktopStringY[i].length(); j ++){
-                        cell = desktopStringY[i].charAt(j) + "";
-                        desktop[i][j] = Integer.parseInt(cell);
-                        System.out.print(desktop[i][j]);
+                for(int a = 0; a < 10; a++){
+                    for(int b = 0; b< 10; b++){
+                        System.out.print(desktop[a][b]);
                     }
                     System.out.println();
                 }
-
                 System.out.println();
-//                desktop = desktopString;
+
+
+//                System.out.println(desktop.length);
+//                System.out.println(desktop[0].length);
             }catch(IOException e){
                 System.out.println("Error");
             }

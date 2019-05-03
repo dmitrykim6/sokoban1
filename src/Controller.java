@@ -98,6 +98,8 @@ public class Controller implements KeyListener, ActionListener {
                 direction = "down";
                 break;
 
+                default:
+                    return;
         }
         model.move(direction);
     }
